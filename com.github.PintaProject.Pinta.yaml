@@ -1,6 +1,6 @@
 app-id: com.github.PintaProject.Pinta
 runtime: org.gnome.Platform
-runtime-version: '3.30'
+runtime-version: '3.32'
 sdk: org.gnome.Sdk
 command: pinta
 rename-desktop-file: pinta.desktop
