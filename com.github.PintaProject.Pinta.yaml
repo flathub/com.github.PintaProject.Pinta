@@ -3,6 +3,7 @@ runtime: org.gnome.Platform
 runtime-version: '3.32'
 sdk: org.gnome.Sdk
 command: pinta
+rename-appdata-file: pinta.appdata.xml
 rename-desktop-file: pinta.desktop
 rename-icon: pinta
 copy-icon: true
