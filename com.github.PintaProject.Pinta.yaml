@@ -29,6 +29,10 @@ finish-args:
   - --filesystem=~/.config/dconf:ro
   - --talk-name=ca.desrt.dconf
   - --env=DCONF_USER_CONFIG_DIR=.config/dconf
+  # GVfs access
+  - --filesystem=xdg-run/gvfs:ro
+  - --talk-name=org.gtk.vfs
+  - --talk-name=org.gtk.vfs.*
   # OpenGL access
   - --device=dri
 build-options:
@@ -37,9 +41,6 @@ build-options:
   env:
     PKG_CONFIG_PATH: /app/lib/pkgconfig:/app/share/pkgconfig:/usr/lib/pkgconfig:/usr/share/pkgconfig:/usr/lib/sdk/mono5/lib/pkgconfig
 modules:
-  - shared-modules/gtk2/gtk2.json
-  - mono-runtime.yaml
-  - gtk-sharp.yaml
   - Pinta.yaml
 cleanup:
   - /lib/pkgconfig
