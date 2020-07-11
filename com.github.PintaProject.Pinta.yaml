@@ -8,7 +8,7 @@ rename-desktop-file: pinta.desktop
 rename-icon: pinta
 copy-icon: true
 sdk-extensions:
-  - org.freedesktop.Sdk.Extension.mono5
+  - org.freedesktop.Sdk.Extension.mono6
 finish-args:
   # X11 + XShm access
   - --share=ipc
@@ -36,10 +36,10 @@ finish-args:
   # OpenGL access
   - --device=dri
 build-options:
-  append-path: /usr/lib/sdk/mono5/bin
-  append-ld-library-path: /usr/lib/sdk/mono5/lib
+  append-path: /usr/lib/sdk/mono6/bin
+  append-ld-library-path: /usr/lib/sdk/mono6/lib
   env:
-    PKG_CONFIG_PATH: /app/lib/pkgconfig:/app/share/pkgconfig:/usr/lib/pkgconfig:/usr/share/pkgconfig:/usr/lib/sdk/mono5/lib/pkgconfig
+    PKG_CONFIG_PATH: /app/lib/pkgconfig:/app/share/pkgconfig:/usr/lib/pkgconfig:/usr/share/pkgconfig:/usr/lib/sdk/mono6/lib/pkgconfig
 modules:
   - Pinta.yaml
 cleanup:
