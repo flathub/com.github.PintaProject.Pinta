@@ -5,3 +5,22 @@ build-options:
   strip: true
 build-commands:
   - /usr/lib/sdk/mono6/install.sh;
+  # Additional GACs
+  - |
+    GACS="System.ComponentModel.Composition"
+    for G in $BASE_GACS $@; do
+        cp -ar /usr/lib/sdk/mono6/lib/mono/gac/$G /app/lib/mono/gac/;
+        rm -f /app/lib/mono/gac/$G/*/*.pdb;
+    done;
+  # TODO "System.ComponentModel.Composition" still not found
+  - |
+    mkdir -p /app/lib/mono/4.0-api
+    cp /usr/lib/sdk/mono6/lib/mono/4.0-api/*.dll* /app/lib/mono/4.0-api/
+    rm -f /app/lib/mono/4.0-api/Microsoft.CodeAnalysis*
+  # TODO why is it only working when copying all?
+  - cp -ar /usr/lib/sdk/mono6/lib/* /app/lib/
+  # Setup SSL certificates for NuGet to download Cake https://github.com/mono/mono/issues/12406#issuecomment-454001425
+  - |
+    cert-sync --user /etc/ssl/certs/ca-certificates.crt
+    mkdir -p /app/usr/share/.mono/certs
+    mv $HOME/.config/.mono/certs/* /app/usr/share/.mono/certs/

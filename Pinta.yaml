@@ -1,7 +1,7 @@
 name: Pinta
 sources:
   - type: git
-    branch: master
+    branch: gtk3-v2
     url: https://github.com/PintaProject/Pinta.git
   # https://github.com/PintaProject/Pinta/pull/140
   - type: patch
