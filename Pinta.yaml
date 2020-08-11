@@ -1,8 +1,9 @@
 name: Pinta
 sources:
-  - type: archive
-    url: https://github.com/PintaProject/Pinta/releases/download/1.7/pinta-1.7.tar.gz
-    sha256: 678c0d5c6e41da77696180efc71476ccfda3238a3d68d7331198c8a431dbf96c
+  - type: git
+    url: https://github.com/PintaProject/Pinta.git
+    tag: "1.7"
+    commit: 3d6c188680a389c1f9f40138c092b05ba4009b2e
   # https://github.com/PintaProject/Pinta/pull/140
   # https://github.com/PintaProject/Pinta/pull/142
   - type: patch
