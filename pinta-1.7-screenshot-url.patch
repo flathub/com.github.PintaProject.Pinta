@@ -1,0 +1,25 @@
+From c2aaaa5ec325500d21d655fd1d36eb66f699eb32 Mon Sep 17 00:00:00 2001
+From: Dark Dragon <darkdragon-001@web.de>
+Date: Tue, 11 Aug 2020 09:21:43 +0200
+Subject: [PATCH] Fix screenshot URL in appdata.
+
+---
+ xdg/pinta.appdata.xml.in | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/xdg/pinta.appdata.xml.in b/xdg/pinta.appdata.xml.in
+index e6d9dc0b..7d317593 100644
+--- a/xdg/pinta.appdata.xml.in
++++ b/xdg/pinta.appdata.xml.in
+@@ -23,7 +23,7 @@
+   <screenshots>
+     <screenshot type="default">
+       <caption>Main window</caption>
+-      <image>https://pinta-project.com/pintaproject/pinta/theme/images/ss1.jpg</image>
++      <image>https://www.pinta-project.com/theme/images/ss1.jpg</image>
+     </screenshot>
+   </screenshots>
+   <developer_name>Jonathan Pobst</developer_name>
+-- 
+2.25.1
+
