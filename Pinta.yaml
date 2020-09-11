@@ -6,6 +6,7 @@ sources:
     commit: 3d6c188680a389c1f9f40138c092b05ba4009b2e
   # https://github.com/PintaProject/Pinta/pull/140
   # https://github.com/PintaProject/Pinta/pull/142
+  # https://github.com/PintaProject/Pinta/pull/145
   - type: patch
     path: pinta-1.7-appdata.patch
 post-install:

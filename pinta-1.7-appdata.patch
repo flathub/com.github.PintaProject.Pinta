@@ -159,6 +159,28 @@ index 0fc0d87b..cd082efe 100644
    </releases>
  </component>
 
+From 23bfcb5d8370fd0169e8c79bd56de0902b12bf6f Mon Sep 17 00:00:00 2001
+From: Dark Dragon <darkdragon-001@web.de>
+Date: Fri, 11 Sep 2020 06:39:39 +0200
+Subject: [PATCH] Fix screenshot link.
+
+---
+ xdg/pinta.appdata.xml.in | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/xdg/pinta.appdata.xml.in b/xdg/pinta.appdata.xml.in
+index cd082efe..dec8a4d4 100644
+--- a/xdg/pinta.appdata.xml.in
++++ b/xdg/pinta.appdata.xml.in
+@@ -23,7 +23,7 @@
+   <screenshots>
+     <screenshot type="default">
+       <caption>Main window</caption>
+-      <image>https://www.pinta-project.com/theme/images/ss1.jpg</image>
++      <image>https://www.pinta-project.com/theme/images/ss1.png</image>
+     </screenshot>
+   </screenshots>
+   <developer_name>Jonathan Pobst</developer_name>
 -- 
-2.25.1
+2.27.0
 
