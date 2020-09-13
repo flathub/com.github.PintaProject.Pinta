@@ -1,25 +1,14 @@
 name: Pinta
 sources:
-  - type: archive
-    url: https://github.com/PintaProject/Pinta/archive/1.6.tar.gz
-    sha256: 7fbabd701c45bd23654606308fce5dc2839cd8b4a2a4b6747fc46d1b5bede269
-  # Update the project and solution files for mono4
-  # https://github.com/gentoo/gentoo/blob/4492fc08041affcc2dd8a43096db275958016100/media-gfx/pinta/files/pinta-1.6-mono-4.patch
+  - type: git
+    url: https://github.com/PintaProject/Pinta.git
+    tag: "1.7"
+    commit: 3d6c188680a389c1f9f40138c092b05ba4009b2e
+  # https://github.com/PintaProject/Pinta/pull/140
+  # https://github.com/PintaProject/Pinta/pull/142
+  # https://github.com/PintaProject/Pinta/pull/145
   - type: patch
-    path: pinta-1.6-mono-4.patch
-  # Update XDG files
-  # https://github.com/PintaProject/Pinta/pull/121
-  # https://github.com/PintaProject/Pinta/pull/132
-  # https://github.com/PintaProject/Pinta/pull/137
-  - type: patch
-    path: pinta-1.6-xdg.patch
-  # Update translations
-  # https://github.com/PintaProject/Pinta/commit/c2678414fdbc56ebc0143719bec0870b353f95e9
-  # https://github.com/PintaProject/Pinta/commit/30ec088b8e506a27552c1153656d29ab85807645
-  # https://github.com/PintaProject/Pinta/commit/9d3e44a8207deb6fe5b2ffba398eb64616f4757a
-  # https://github.com/PintaProject/Pinta/commit/8926964dd3ce626d461084df196e3ce8852cdfe7
-  - type: patch
-    path: pinta-1.6-po.patch
+    path: pinta-1.7-appdata.patch
 post-install:
   - |
     icon_in="xdg/scalable/pinta.svg";

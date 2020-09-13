@@ -5,6 +5,9 @@ sources:
     sha256: 02680578e4535441064aac21d33315daa009d742cab8098ac8b2749d86fffb6a
   - type: patch
     path: gtk-sharp2-2.12.12-glib-include.patch
+  # https://github.com/mono/gtk-sharp/commit/3faabd7bdce8f3e3e59f0ee945f4f36ea6d3e870
+  - type: patch
+    path: gtk-sharp2-2.12.45-range-disambiguation.patch
   - type: shell
     commands:
       - cp -p /usr/share/automake-*/config.{sub,guess} .;
