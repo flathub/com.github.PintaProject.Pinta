@@ -2,13 +2,19 @@ name: Pinta
 sources:
   - type: git
     url: https://github.com/PintaProject/Pinta.git
-    tag: "1.7"
-    commit: 3d6c188680a389c1f9f40138c092b05ba4009b2e
-  # https://github.com/PintaProject/Pinta/pull/140
-  # https://github.com/PintaProject/Pinta/pull/142
-  # https://github.com/PintaProject/Pinta/pull/145
-  - type: patch
-    path: pinta-1.7-appdata.patch
+    #tag: "1.8"
+    #commit: 3d6c188680a389c1f9f40138c092b05ba4009b2e
+    branch: "gtk3-v2"
+    # TODO check for release notes in xdg/pinta.appdata.xml.in
+build-options:
+  append-path: /usr/lib/sdk/dotnet5/bin
+  append-ld-library-path: /usr/lib/sdk/dotnet5/lib
+  build-args:
+    - "--share=network"
+  env:
+    PKG_CONFIG_PATH: /app/lib/pkgconfig:/app/share/pkgconfig:/usr/lib/pkgconfig:/usr/share/pkgconfig:/usr/lib/sdk/dotnet5/lib/pkgconfig
+    DOTNET_CLI_TELEMETRY_OPTOUT: 'true'
+    DOTNET_SKIP_FIRST_TIME_EXPERIENCE: 'true'
 post-install:
   - |
     icon_in="xdg/scalable/pinta.svg";
@@ -25,7 +31,5 @@ post-install:
       xmlstarlet ed --inplace -d '/component/provides[not(./*) and (not(./text()) or normalize-space(./text())="")]' "${f}";
     done;
 modules:
-  - shared-modules/gtk2/gtk2.json
-  - mono-runtime.yaml
-  - gtk-sharp.yaml
+  - shared-modules/intltool/intltool-0.51.json
   - xmlstarlet.yaml
