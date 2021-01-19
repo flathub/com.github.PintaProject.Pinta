@@ -1,7 +1,7 @@
-name: mono-runtime
+name: dotnet-runtime
 buildsystem: simple
 build-options:
   no-debuginfo: true
   strip: true
 build-commands:
-  - /usr/lib/sdk/mono6/install.sh;
+  - /usr/lib/sdk/dotnet5/bin/install.sh
