@@ -1,16 +1,20 @@
 name: Pinta
 sources:
+  - nuget_sources.json
   - type: git
     url: https://github.com/PintaProject/Pinta.git
     #tag: "1.8"
     #commit: 3d6c188680a389c1f9f40138c092b05ba4009b2e
     branch: "gtk3-v2"
     # TODO check for release notes in xdg/pinta.appdata.xml.in
+  - type: shell
+    commands:
+      # Use locally downloaded sources instead of build-options.build-args=["--share=network"]:
+      # Generate list via: https://github.com/flatpak/flatpak-builder-tools/tree/master/dotnet/flatpak-dotnet-generator.py nuget_sources.json Pinta.sln
+      - sed -i "s|^PINTA_BUILD_OPTS.*|& --source $(pwd)/nuget-sources|" Makefile.am
 build-options:
   append-path: /usr/lib/sdk/dotnet5/bin
   append-ld-library-path: /usr/lib/sdk/dotnet5/lib
-  build-args:
-    - "--share=network"
   env:
     PKG_CONFIG_PATH: /app/lib/pkgconfig:/app/share/pkgconfig:/usr/lib/pkgconfig:/usr/share/pkgconfig:/usr/lib/sdk/dotnet5/lib/pkgconfig
     DOTNET_CLI_TELEMETRY_OPTOUT: 'true'
