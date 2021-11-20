@@ -2,13 +2,8 @@ name: Pinta
 sources:
   - type: git
     url: https://github.com/PintaProject/Pinta.git
-    tag: "1.7"
-    commit: 3d6c188680a389c1f9f40138c092b05ba4009b2e
-  # https://github.com/PintaProject/Pinta/pull/140
-  # https://github.com/PintaProject/Pinta/pull/142
-  # https://github.com/PintaProject/Pinta/pull/145
-  - type: patch
-    path: pinta-1.7-appdata.patch
+    tag: "1.7.1"
+    commit: 98f23509d49e04fa096208f7af718a1defad70ca
 post-install:
   - |
     icon_in="xdg/scalable/pinta.svg";
