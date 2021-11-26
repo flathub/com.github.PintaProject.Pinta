@@ -27,6 +27,7 @@ finish-args:
   - --filesystem=/run/media
   # GVfs access
   - --filesystem=xdg-run/gvfs:ro
+  - --filesystem=xdg-run/gvfsd:ro
   - --talk-name=org.gtk.vfs
   - --talk-name=org.gtk.vfs.*
   # OpenGL access
