@@ -1,6 +1,6 @@
 app-id: com.github.PintaProject.Pinta
 runtime: org.gnome.Platform
-runtime-version: '40'
+runtime-version: '41'
 sdk: org.gnome.Sdk
 command: pinta
 rename-appdata-file: pinta.appdata.xml
@@ -25,11 +25,6 @@ finish-args:
   - --filesystem=xdg-public-share
   - --filesystem=xdg-templates
   - --filesystem=/run/media
-  # Dconf access
-  - --filesystem=xdg-run/dconf
-  - --filesystem=~/.config/dconf:ro
-  - --talk-name=ca.desrt.dconf
-  - --env=DCONF_USER_CONFIG_DIR=.config/dconf
   # GVfs access
   - --filesystem=xdg-run/gvfs:ro
   - --talk-name=org.gtk.vfs
