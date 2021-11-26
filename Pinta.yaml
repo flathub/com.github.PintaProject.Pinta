@@ -5,7 +5,7 @@ sources:
     url: https://github.com/PintaProject/Pinta.git
     #tag: "1.8"
     #commit: 3d6c188680a389c1f9f40138c092b05ba4009b2e
-    branch: "gtk3-v2"
+    branch: "master"
     # TODO check for release notes in xdg/pinta.appdata.xml.in
   - type: shell
     commands:
