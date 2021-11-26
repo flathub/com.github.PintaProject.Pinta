@@ -4,4 +4,10 @@ build-options:
   no-debuginfo: true
   strip: true
 build-commands:
-  - /usr/lib/sdk/dotnet5/bin/install.sh
+  # BUG wait to fix /usr/lib/sdk/dotnet6/bin?/install.sh in https://github.com/flathub/org.freedesktop.Sdk.Extension.dotnet6/pull/7
+  - "mkdir -p /app/lib/dotnet"
+  - "mkdir -p /app/bin"
+  - "cp -L /usr/lib/sdk/dotnet6/lib/libunwind{,-coredump,-$FLATPAK_ARCH}.so /app/lib/dotnet"
+  - "cp -r /usr/lib/sdk/dotnet6/lib/{dotnet,host,shared} /app/lib/dotnet"
+  - "ln -sf /app/lib/dotnet/dotnet /app/bin/dotnet"
+
