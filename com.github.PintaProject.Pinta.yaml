@@ -26,8 +26,8 @@ finish-args:
   - --filesystem=xdg-templates
   - --filesystem=/run/media
   # GVfs access
-  - --filesystem=xdg-run/gvfs:ro
-  - --filesystem=xdg-run/gvfsd:ro
+  - --filesystem=xdg-run/gvfs
+  - --filesystem=xdg-run/gvfsd
   - --talk-name=org.gtk.vfs
   - --talk-name=org.gtk.vfs.*
   # OpenGL access
