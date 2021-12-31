@@ -3,10 +3,8 @@ sources:
   - nuget_sources.json
   - type: git
     url: https://github.com/PintaProject/Pinta.git
-    #tag: "1.8"
-    #commit: 3d6c188680a389c1f9f40138c092b05ba4009b2e
-    branch: "master"
-    # TODO check for release notes in xdg/pinta.appdata.xml.in
+    tag: "2.0"
+    commit: 8f168ea3fd87264ecbbc3ad6eb75d6a4df136960
   - type: shell
     commands:
       # Use locally downloaded sources instead of build-options.build-args=["--share=network"]:
