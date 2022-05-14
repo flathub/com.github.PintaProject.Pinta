@@ -5,6 +5,10 @@ sources:
     url: https://github.com/PintaProject/Pinta.git
     tag: "2.0.2"
     commit: 7ca0ee17d2a4b8e4f087f11508f1f448b445a690
+    x-checker-data:
+      type: git
+      tag-pattern: ^([\d.]+)$
+      is-main-source: true
   - type: shell
     commands:
       # Use locally downloaded sources instead of build-options.build-args=["--share=network"]:
