@@ -1,6 +1,6 @@
 app-id: com.github.PintaProject.Pinta
 runtime: org.gnome.Platform
-runtime-version: '42'
+runtime-version: '43'
 sdk: org.gnome.Sdk
 command: pinta
 rename-appdata-file: pinta.appdata.xml
@@ -8,7 +8,7 @@ rename-desktop-file: pinta.desktop
 rename-icon: pinta
 copy-icon: true
 sdk-extensions:
-  - org.freedesktop.Sdk.Extension.dotnet6
+  - org.freedesktop.Sdk.Extension.dotnet7
 finish-args:
   # X11 + XShm access
   - --share=ipc

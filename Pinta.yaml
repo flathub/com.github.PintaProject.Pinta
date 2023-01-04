@@ -3,8 +3,8 @@ sources:
   - nuget_sources.json
   - type: git
     url: https://github.com/PintaProject/Pinta.git
-    tag: "2.0.2"
-    commit: 7ca0ee17d2a4b8e4f087f11508f1f448b445a690
+    tag: "2.1"
+    commit: 65667d140d8d150eca153e09684380850a8326c6
     x-checker-data:
       type: git
       tag-pattern: ^([\d.]+)$
@@ -15,21 +15,13 @@ sources:
       # Generate list via: https://github.com/flatpak/flatpak-builder-tools/tree/master/dotnet/flatpak-dotnet-generator.py nuget_sources.json Pinta.sln
       - sed -i "s|^PINTA_BUILD_OPTS.*|& --source $(pwd)/nuget-sources|" Makefile.am
 build-options:
-  append-path: /usr/lib/sdk/dotnet6/bin
-  append-ld-library-path: /usr/lib/sdk/dotnet6/lib
+  append-path: /usr/lib/sdk/dotnet7/bin
+  append-ld-library-path: /usr/lib/sdk/dotnet7/lib
   env:
-    PKG_CONFIG_PATH: /app/lib/pkgconfig:/app/share/pkgconfig:/usr/lib/pkgconfig:/usr/share/pkgconfig:/usr/lib/sdk/dotnet6/lib/pkgconfig
+    PKG_CONFIG_PATH: /app/lib/pkgconfig:/app/share/pkgconfig:/usr/lib/pkgconfig:/usr/share/pkgconfig:/usr/lib/sdk/dotnet7/lib/pkgconfig
     DOTNET_CLI_TELEMETRY_OPTOUT: 'true'
     DOTNET_SKIP_FIRST_TIME_EXPERIENCE: 'true'
 post-install:
-  - |
-    icon_in="xdg/scalable/pinta.svg";
-    icon_out="pinta.png";
-    for s in {16,22,24,32,36,48,64,72,96,128,192,256,512}; do
-      [[ ! -f "${FLATPAK_DEST}/share/icons/hicolor/${s}x${s}/apps/${icon_out}" ]] || continue;
-      rsvg-convert "${icon_in}" -w "${s}" -h "${s}" -a -f png -o "${icon_out}";
-      install -p -D -m 0644 "${icon_out}" -t "${FLATPAK_DEST}/share/icons/hicolor/${s}x${s}/apps/";
-    done;
   - gtk-update-icon-cache --force --ignore-theme-index "${FLATPAK_DEST}/share/icons/hicolor";
   - |
     for f in "${FLATPAK_DEST}/share/metainfo/pinta.appdata.xml"; do
