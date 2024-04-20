@@ -14,10 +14,6 @@ sources:
       # Use locally downloaded sources instead of build-options.build-args=["--share=network"]:
       # Generate list via: https://github.com/flatpak/flatpak-builder-tools/tree/master/dotnet/flatpak-dotnet-generator.py nuget_sources.json Pinta.sln
       - sed -i "s|^PINTA_BUILD_OPTS.*|& --source $(pwd)/nuget-sources|" Makefile.am
-  # Fix appstream validation errors.
-  # Upstream commit for next release: https://github.com/PintaProject/Pinta/commit/ac2588c636473f94a86fe4ef75340e37f2a67811
-  - type: patch
-    path: fix-appstream.patch
 build-options:
   append-path: /usr/lib/sdk/dotnet7/bin
   append-ld-library-path: /usr/lib/sdk/dotnet7/lib
