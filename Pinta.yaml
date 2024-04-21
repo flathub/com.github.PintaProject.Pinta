@@ -15,10 +15,10 @@ sources:
       # Generate list via: https://github.com/flatpak/flatpak-builder-tools/tree/master/dotnet/flatpak-dotnet-generator.py nuget_sources.json Pinta.sln
       - sed -i "s|^PINTA_BUILD_OPTS.*|& --source $(pwd)/nuget-sources|" Makefile.am
 build-options:
-  append-path: /usr/lib/sdk/dotnet7/bin
-  append-ld-library-path: /usr/lib/sdk/dotnet7/lib
+  append-path: /usr/lib/sdk/dotnet8/bin
+  append-ld-library-path: /usr/lib/sdk/dotnet8/lib
   env:
-    PKG_CONFIG_PATH: /app/lib/pkgconfig:/app/share/pkgconfig:/usr/lib/pkgconfig:/usr/share/pkgconfig:/usr/lib/sdk/dotnet7/lib/pkgconfig
+    PKG_CONFIG_PATH: /app/lib/pkgconfig:/app/share/pkgconfig:/usr/lib/pkgconfig:/usr/share/pkgconfig:/usr/lib/sdk/dotnet8/lib/pkgconfig
     DOTNET_CLI_TELEMETRY_OPTOUT: 'true'
     DOTNET_SKIP_FIRST_TIME_EXPERIENCE: 'true'
 post-install:

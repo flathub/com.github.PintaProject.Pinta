@@ -4,5 +4,5 @@ build-options:
   no-debuginfo: true
   strip: true
 build-commands:
-  - /usr/lib/sdk/dotnet7/bin/install.sh
+  - /usr/lib/sdk/dotnet8/bin/install.sh
 
