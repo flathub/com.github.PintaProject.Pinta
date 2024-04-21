@@ -3,8 +3,8 @@ sources:
   - nuget_sources.json
   - type: git
     url: https://github.com/PintaProject/Pinta.git
-    tag: 2.1.1
-    commit: bb52f2e05d48a90910de58f02204551d4af80e1e
+    tag: 2.1.2
+    commit: 79f2799cba3a1a78c20ecbabfb6575204036f6c8
     x-checker-data:
       type: git
       tag-pattern: ^([\d.]+)$
@@ -14,15 +14,11 @@ sources:
       # Use locally downloaded sources instead of build-options.build-args=["--share=network"]:
       # Generate list via: https://github.com/flatpak/flatpak-builder-tools/tree/master/dotnet/flatpak-dotnet-generator.py nuget_sources.json Pinta.sln
       - sed -i "s|^PINTA_BUILD_OPTS.*|& --source $(pwd)/nuget-sources|" Makefile.am
-  # Fix appstream validation errors.
-  # Upstream commit for next release: https://github.com/PintaProject/Pinta/commit/ac2588c636473f94a86fe4ef75340e37f2a67811
-  - type: patch
-    path: fix-appstream.patch
 build-options:
-  append-path: /usr/lib/sdk/dotnet7/bin
-  append-ld-library-path: /usr/lib/sdk/dotnet7/lib
+  append-path: /usr/lib/sdk/dotnet8/bin
+  append-ld-library-path: /usr/lib/sdk/dotnet8/lib
   env:
-    PKG_CONFIG_PATH: /app/lib/pkgconfig:/app/share/pkgconfig:/usr/lib/pkgconfig:/usr/share/pkgconfig:/usr/lib/sdk/dotnet7/lib/pkgconfig
+    PKG_CONFIG_PATH: /app/lib/pkgconfig:/app/share/pkgconfig:/usr/lib/pkgconfig:/usr/share/pkgconfig:/usr/lib/sdk/dotnet8/lib/pkgconfig
     DOTNET_CLI_TELEMETRY_OPTOUT: 'true'
     DOTNET_SKIP_FIRST_TIME_EXPERIENCE: 'true'
 post-install:
