@@ -1,6 +1,6 @@
 app-id: com.github.PintaProject.Pinta
 runtime: org.gnome.Platform
-runtime-version: '46'
+runtime-version: '47'
 sdk: org.gnome.Sdk
 command: pinta
 rename-appdata-file: pinta.appdata.xml
