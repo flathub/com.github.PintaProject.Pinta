@@ -3,8 +3,8 @@ sources:
   - nuget_sources.json
   - type: git
     url: https://github.com/PintaProject/Pinta.git
-    tag: 2.1.2
-    commit: 79f2799cba3a1a78c20ecbabfb6575204036f6c8
+    tag: 3.0-beta1
+    commit: eadb71d7caf96b384a53f808fe1565e84adf578e
     x-checker-data:
       type: git
       tag-pattern: ^([\d.]+)$
