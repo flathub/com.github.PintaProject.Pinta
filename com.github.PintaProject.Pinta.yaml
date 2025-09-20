@@ -3,10 +3,6 @@ runtime: org.gnome.Platform
 runtime-version: '48'
 sdk: org.gnome.Sdk
 command: pinta
-rename-appdata-file: pinta.appdata.xml
-rename-desktop-file: pinta.desktop
-rename-icon: pinta
-copy-icon: true
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.dotnet8
 finish-args:
