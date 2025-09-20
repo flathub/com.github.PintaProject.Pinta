@@ -3,8 +3,8 @@ sources:
   - nuget_sources.json
   - type: git
     url: https://github.com/PintaProject/Pinta.git
-    tag: '3.0.1'
-    commit: a8f36345cd0fee3a2ad4fc5ccaad83169815a726
+    tag: 3.1-beta1
+    commit: 5c06e6c6d1d7fc6e406c1ea4ed7e4910bf481912
     x-checker-data:
       type: git
       tag-pattern: ^([\d.]+)$
@@ -24,7 +24,7 @@ build-options:
 post-install:
   - gtk-update-icon-cache --force --ignore-theme-index "${FLATPAK_DEST}/share/icons/hicolor";
   - |
-    for f in "${FLATPAK_DEST}/share/metainfo/pinta.appdata.xml"; do
+    for f in "${FLATPAK_DEST}/share/metainfo/com.github.PintaProject.Pinta.metainfo.xml"; do
       xmlstarlet ed --inplace -d '/component/provides/binary' "${f}";
       xmlstarlet ed --inplace -d '/component/provides[not(./*) and (not(./text()) or normalize-space(./text())="")]' "${f}";
     done;
