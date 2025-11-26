@@ -47,8 +47,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/PintaProject/Pinta.git
-        tag: 3.0.4
-        commit: ac739822816b7d1925074adc9c29d5cf37b664b5
+        tag: 3.0.5
+        commit: 5d01b551d7204e8dfa5a79cf5f70cc213cc43027
         x-checker-data:
           type: git
           tag-pattern: ^([\d.]+)$
