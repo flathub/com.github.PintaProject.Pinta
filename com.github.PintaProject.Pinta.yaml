@@ -3,10 +3,6 @@ runtime: org.gnome.Platform
 runtime-version: '49'
 sdk: org.gnome.Sdk
 command: pinta
-rename-appdata-file: pinta.appdata.xml
-rename-desktop-file: pinta.desktop
-rename-icon: pinta
-copy-icon: true
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.dotnet8
 finish-args:
@@ -47,8 +43,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/PintaProject/Pinta.git
-        tag: 3.0.5
-        commit: 5d01b551d7204e8dfa5a79cf5f70cc213cc43027
+        tag: 3.1
+        commit: 09a8b7186fff18aa81d03d942547427f5331a73b
         x-checker-data:
           type: git
           tag-pattern: ^([\d.]+)$
