@@ -43,7 +43,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/PintaProject/Pinta.git
-        tag: 3.1
+        tag: '3.1'
         commit: 09a8b7186fff18aa81d03d942547427f5331a73b
         x-checker-data:
           type: git
