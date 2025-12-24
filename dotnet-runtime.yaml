@@ -1,8 +1,0 @@
-name: dotnet-runtime
-buildsystem: simple
-build-options:
-  no-debuginfo: true
-  strip: true
-build-commands:
-  - /usr/lib/sdk/dotnet8/bin/install.sh
-
